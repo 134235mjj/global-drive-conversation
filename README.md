@@ -48,4 +48,4 @@
 
 运行 `node scripts/build-pages.cjs` 可生成仅含页面运行文件和音频的 `dist` 目录。仓库内的 `.github/workflows/pages.yml` 在推送到 `main` 后运行测试、构建并发布 `dist`。相对资源路径与 hash 导航支持仓库子路径，保留 `.nojekyll`。
 
-发布前应在学校网络和学生手机上实际试用。当前未执行 GitHub 发布；本地地址不能作为学生公网链接。公开仓库中的题库与答案可被查看，不适用于防作弊考试。
+公网练习地址：<https://134235mjj.github.io/global-drive-conversation/>。源代码仓库：<https://github.com/134235mjj/global-drive-conversation>。2026-09-22 的 Pages 工作流已部署通过，页面与地域录音资源经公网检查正常。仍建议在学校网络和学生手机上实际试用。公开仓库中的题库与答案可被查看，不适用于防作弊考试。
