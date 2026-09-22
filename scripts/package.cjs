@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path'),vm=require('vm');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'deliverables'),release=path.join(out,'交流互动台-v1.0');
 fs.mkdirSync(release,{recursive:true});
-for(const file of ['index.html','styles.css','app-extra.css','feedback.css','regional-audio.css','voice-ui.css','app.js','core.js','data.js','regional-audio.js','recording-studio.html','recording-studio.js','README.md','REGIONAL_AUDIO_GUIDE.md','INTEGRATION.md','VALIDATION.md','.nojekyll','preview-server.cjs','generate-audio.ps1','audio-scripts.json'])fs.copyFileSync(path.join(root,file),path.join(release,file));
+for(const file of ['index.html','styles.css','app-extra.css','feedback.css','regional-audio.css','app.js','core.js','data.js','regional-audio.js','recording-studio.html','recording-studio.js','README.md','REGIONAL_AUDIO_GUIDE.md','INTEGRATION.md','VALIDATION.md','.nojekyll','preview-server.cjs','generate-audio.ps1','audio-scripts.json'])fs.copyFileSync(path.join(root,file),path.join(release,file));
 for(const dir of ['assets','scripts','tests','.github'])fs.cpSync(path.join(root,dir),path.join(release,dir),{recursive:true});
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'data.js'),'utf8'),ctx);
 fs.mkdirSync(path.join(release,'audio'),{recursive:true});
