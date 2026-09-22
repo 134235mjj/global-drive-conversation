@@ -103,6 +103,6 @@
   else if(action==='transcript'){draft().assisted=true;save();render()}
  });
  document.addEventListener('input',event=>{if(event.target.id==='answer'){setText('charCount',event.target.value.length+' / 400');capture()}else if(event.target.id==='audioProgress'&&player&&Number.isFinite(player.duration)){player.currentTime=player.duration*Number(event.target.value)/100}else if(['fact','topic','stageChoice'].includes(event.target.name))capture();});
- document.addEventListener('change',event=>{if(event.target.id==='speed'&&player)player.playbackRate=Number(event.target.value);else if(event.target.id==='nativeCapture'){const file=event.target.files?.[0];if(!file)return;if(!file.type.startsWith('audio/')||file.size>15*1024*1024){setText('speechStatus','请选择不超过 15 MB 的音频文件。');return}presentClip(file,clipKey());event.target.value=''}});
+ document.addEventListener('change',event=>{if(event.target.id==='speed'&&player)player.playbackRate=Number(event.target.value);else if(event.target.id==='nativeCapture'){const file=event.target.files?.[0];if(!file)return;const audioType=file.type.startsWith('audio/')||(!file.type&&/\.(m4a|aac|mp3|wav|webm|ogg|mp4)$/i.test(file.name));if(!audioType||file.size>15*1024*1024){setText('speechStatus','请选择不超过 15 MB 的音频文件。');return}presentClip(file,clipKey());event.target.value=''}});
  window.addEventListener('hashchange',render);window.addEventListener('pagehide',()=>{cleanup();clearVoiceClips()});render();
 })();
