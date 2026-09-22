@@ -1,0 +1,11 @@
+.steps .step{border:0;color:#5579a8;cursor:pointer;font:inherit;padding:0;flex:none}
+.steps .step.on{color:#fff}
+.steps .step:not(:disabled):hover{box-shadow:0 0 0 3px #b7d3fa}
+.steps .step:focus-visible{outline:2px solid #125dc9;outline-offset:3px}
+.steps .step:disabled{opacity:.6;cursor:not-allowed}
+#voiceClip audio{display:block;width:min(100%,390px);margin-top:12px}
+.native-capture{display:inline-flex;position:relative;align-items:center;cursor:pointer}
+.native-capture[hidden]{display:none}
+.native-capture input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.native-capture:focus-within{outline:2px solid #125dc9;outline-offset:3px}
+@media(max-width:650px){.exercise-meta .steps{gap:10px}.steps .step{width:38px;height:38px}.work .actions{flex-wrap:wrap}.work .actions button{min-height:44px}}
