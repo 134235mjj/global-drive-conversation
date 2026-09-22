@@ -13,7 +13,7 @@
   '先用英语认可顾虑并解释可核实的产品价值，再礼貌澄清一个比较或保障问题。',
   '先用英语总结匹配优势和合同、付款、交付步骤，再确认一个尚未明确的成交安排。'
  ];
- let store={recent:[],history:[],active:null},player=null,recognizer=null,recording=false,timer=null,audioEpoch=0,reviewRecord=null;
+ let store={recent:[],history:[],active:null},player=null,recognizer=null,recording=false,timer=null,audioEpoch=0,reviewRecord=null,recognitionStopTimer=null;
  function validResult(r){const q=find(r?.questionId),s=r?.score;return !!q&&typeof r.answer==='string'&&r.answer.length<=400&&q.topics.some(t=>t.id===r.topic)&&Array.isArray(r.selection)&&r.selection.every(id=>q.facts.some(f=>f.id===id))&&s&&['known','ask','total'].every(k=>Number.isFinite(s[k])&&s[k]>=0&&s[k]<=100)&&Array.isArray(s.parts)&&s.parts.length===4&&s.parts.every((v,i)=>Number.isFinite(v)&&v>=0&&v<=[10,20,10,10][i])&&Array.isArray(s.notes)&&s.notes.every(v=>typeof v==='string')&&typeof s.reply==='string'&&typeof s.example==='string';}
  try{const data=JSON.parse(localStorage.getItem(KEY)||'null');if(data&&Array.isArray(data.history)&&Array.isArray(data.recent)){
   store.history=data.history.filter(r=>r&&typeof r.id==='string'&&Number.isFinite(r.total)&&r.total>=0&&r.total<=100&&D.scenes[r.scene]&&typeof r.title==='string'&&typeof r.completedAt==='string'&&Array.isArray(r.results)&&r.results.length===2&&r.results.every(validResult)).slice(0,30);
@@ -28,7 +28,7 @@
  function current(){return store.active?find(store.active.draw[store.active.index].id):null}
  function draft(){return store.active.drafts[store.active.index]}
  function cleanup(){audioEpoch++;if(timer){clearInterval(timer);timer=null}if(player){const p=player;player=null;p.pause();p.removeAttribute('src');p.load()}stopRecording();}
- function stopRecording(){if(recognizer){const r=recognizer;recognizer=null;r.onresult=null;r.onend=null;r.onerror=null;try{r.abort()}catch{}}recording=false;}
+ function stopRecording(){if(recognitionStopTimer){clearTimeout(recognitionStopTimer);recognitionStopTimer=null}if(recognizer){const r=recognizer;recognizer=null;r.onresult=null;r.onend=null;r.onerror=null;try{r.abort()}catch{}}recording=false;}
  function setText(id,text){const el=document.getElementById(id);if(el)el.textContent=text}
  function top(eyebrow,title,sub=''){return `<div class="intro"><div><div class="eyebrow">${esc(eyebrow)}</div><h1 tabindex="-1">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div></div>`}
  function audioInfo(q){const profile=R.countries?.[q.customer.country]||{label:q.customer.countryName+'英语'},record=R.recordings?.[q.id];if(record?.reviewed&&record.src)return {src:record.src,label:profile.label+' · 地域神经语音',regional:true,note:profile.label+'音色 · 已接入'};return {src:q.audio,label:'标准英语备用音频',regional:false,note:profile.label+'音频待补充'};}
@@ -70,7 +70,18 @@
  async function play(){const p=player;if(!p)return;if(!p.paused){p.pause();setText('audioStatus','已暂停，点击继续');return}try{if(p.error)p.load();if(p.ended)p.currentTime=0;await p.play();if(player===p)setText('audioStatus','正在播放客户需求…')}catch{if(player===p){setText('audioStatus','无法播放，请点击重试或使用文字辅助');document.querySelector('#audioFallback').hidden=false}}}
  function speechAvailable(){return !!(window.SpeechRecognition||window.webkitSpeechRecognition)&&window.isSecureContext;}
  function record(){
-  if(recording){recognizer?.stop();return}
+  if(recording){
+   const r=recognizer;
+   setText('mic','正在结束…');setText('speechStatus','正在结束录音并整理文字…');
+   try{r?.stop()}catch{try{r?.abort()}catch{}}
+   // 微信/企业微信内置浏览器有时不会触发 onend；兜底恢复按钮，避免卡在“停止录音”。
+   recognitionStopTimer=setTimeout(()=>{
+    if(!recording)return;
+    recording=false;recognizer=null;recognitionStopTimer=null;setText('mic','🎙 录音转文字');
+    const text=document.querySelector('#answer')?.value.trim();setText('speechStatus',text?'已自动填写英语，请核对文字后提交。':'没有识别到英语，请重试或手动输入。');
+   },1800);
+   return
+  }
   if(!store.active||store.active.results[store.active.index])return;
   if(!speechAvailable()){
    setText('speechStatus',window.isSecureContext?'当前浏览器不支持网页语音转写，请换用支持语音识别的浏览器，或使用键盘语音输入。':'语音识别需要 HTTPS 或本机地址，请用安全链接打开。');
@@ -101,6 +112,7 @@
   };
   r.onend=()=>{
    if(!active())return;
+   if(recognitionStopTimer){clearTimeout(recognitionStopTimer);recognitionStopTimer=null}
    recording=false;recognizer=null;setText('mic','🎙 录音转文字');
    if(heard||preview)setText('speechStatus','已自动填写英语，请核对文字后提交。');
    else if(!failure)setText('speechStatus','没有识别到英语，请重试或手动输入。');
