@@ -91,8 +91,8 @@
   let recorder;try{const types=['audio/mp4','audio/webm;codecs=opus','audio/webm'];const mimeType=types.find(type=>MediaRecorder.isTypeSupported?.(type));recorder=new MediaRecorder(stream,mimeType?{mimeType}:undefined)}catch{stream.getTracks().forEach(track=>track.stop());const native=document.querySelector('#nativeCaptureWrap');if(native)native.hidden=false;setText('speechStatus','此浏览器无法创建网页录音，请尝试手机录音或键盘听写。');return}
   const chunks=[];mediaRecorder=recorder;mediaStream=stream;recordKey=key;
   recorder.ondataavailable=event=>{if(event.data?.size)chunks.push(event.data)};
-  recorder.onerror=()=>{stopCapture(true);setText('speechStatus','录音中断，请检查麦克风权限后重试。')};
-  recorder.onstop=()=>{if(chunks.length)presentClip(new Blob(chunks,{type:recorder.mimeType||chunks[0].type||'audio/mp4'}),key)};
+  recorder.onerror=()=>{stopCapture(true);const native=document.querySelector('#nativeCaptureWrap');if(native)native.hidden=false;setText('speechStatus','录音中断，请检查麦克风权限，或尝试手机录音。')};
+  recorder.onstop=()=>{if(mediaRecorder===recorder){mediaRecorder=null;mediaStream=null;recordKey=null;if(recordTimeout){clearTimeout(recordTimeout);recordTimeout=null}stream.getTracks().forEach(track=>track.stop());setText('captureButton','录音回听')}if(chunks.length)presentClip(new Blob(chunks,{type:recorder.mimeType||chunks[0].type||'audio/mp4'}),key);else if(key===clipKey()){const native=document.querySelector('#nativeCaptureWrap');if(native)native.hidden=false;setText('speechStatus','没有录到声音，请检查麦克风权限后重试，或使用手机录音。')}};
   try{recorder.start();setText('captureButton','停止录音');setText('speechStatus','正在录音…点击停止，最长 60 秒。');recordTimeout=setTimeout(()=>{if(mediaRecorder===recorder)stopCapture()},60000)}catch{stopCapture(true);setText('speechStatus','录音启动失败，请使用手机键盘听写。')}
  }
  function decorateList(){document.querySelector('.resume')?.remove();document.querySelectorAll('.content > .notice,.scene-library > .notice,.scene-tile .tile-detail').forEach(el=>el.remove());document.querySelector('.scene-library + .actions')?.remove()}
