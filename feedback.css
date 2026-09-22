@@ -1,0 +1,31 @@
+/* Submit-time feedback stays beside the original choice or answer. */
+.option-review{min-width:0;border-radius:9px}
+.option-review .option{height:100%;margin:0}
+.option-review:has(.inline-analysis){border:1px solid #c9dbef;overflow:hidden;background:#f8fbff}
+.option-review:has(.inline-analysis) .option{height:auto;border:0;border-radius:0;background:transparent;align-items:flex-start}
+.inline-analysis{padding:0 12px 12px 35px;font-size:11px;line-height:1.7;overflow-wrap:anywhere}
+.inline-analysis strong{font-size:11px;font-weight:600}
+.inline-analysis p{font-size:11px;color:#617d97;line-height:1.75;margin:5px 0 0}
+.option-review.review-correct{border-color:#badfd4;background:#f5fbf8}
+.review-correct .inline-analysis strong{color:#218064}
+.option-review.review-wrong{border-color:#f0cdb9;background:#fff9f5}
+.review-wrong .inline-analysis strong{color:#ae5c33}
+.option-review.review-secondary{border-color:#d2dfef;background:#f6f9fd}
+.review-secondary .inline-analysis strong{color:#5e7fa6}
+.answer-analysis{margin-top:12px;padding:16px;border:1px solid #cadef6;border-radius:10px;background:#f3f8ff;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.answer-analysis p{font-size:12px;margin:7px 0}
+.answer-analysis b{font-weight:600;color:#355e91}
+.work{scroll-margin-top:20px;align-items:start}
+.fact-text{flex:1;min-width:0}
+.fact-status{margin-left:auto;flex-shrink:0;font-size:10px;line-height:1.6;font-weight:600;text-align:right}
+.review-correct .fact-status{color:#218064}
+.review-wrong .fact-status{color:#ae5c33}
+.response-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.compact-score{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:11px;color:#7c92ad;line-height:1.8}
+.compact-score b{color:#245a9b;font-size:14px;margin-left:4px}
+.response-topline+.feedback{margin-top:14px}
+#feedback{scroll-margin-top:20px}
+#feedback:empty{display:none}
+.feedback-card{margin:0 0 18px}
+@media(max-width:650px){.fact-status{max-width:102px;font-size:10px}.response-topline{gap:7px}.compact-score{gap:8px;font-size:10px}}
+@media(max-width:650px){.topics:has(.inline-analysis){grid-template-columns:1fr}.inline-analysis{padding-left:34px}.answer-analysis{padding:13px}}

@@ -1,0 +1,130 @@
+[
+  {
+    "file": "portrait-narin.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Bangkok. I commute to work and take my children out on weekends. Safety and rear-seat space matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-pim.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Chiang Mai. I drive to my design studio and enjoy trying new technology. Phone connectivity and helpful driving assistance matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-anan.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Phuket. I drive visiting business partners to meetings. A quiet cabin and comfortable seats matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-mali.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Khon Kaen. I take my parents to appointments and carry supplies for our shop. Easy access and a practical luggage area matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-aina.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Kuala Lumpur. I drive to work and visit my parents outside the city. Useful range and enough room for family luggage matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-budi.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Jakarta. I commute across the city and enjoy connected devices. Clear navigation and reliable phone integration matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-linh.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Da Nang. I visit clients and sometimes travel between cities. Comfort on long journeys and a professional appearance matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "portrait-miguel.wav",
+    "text": "Good morning. Thank you for welcoming me. I live in Cebu. I take my children to school and make deliveries for my small business. Low running costs and flexible storage space matter most to me. I am still comparing electric cars. Could you help me find a suitable option?"
+  },
+  {
+    "file": "recommend-narin.wav",
+    "text": "Thank you for listening to my needs. I commute to work and take my children out on weekends. Safety and rear-seat space matter most to me. For my next electric car, I want you to recommend a model that fits space, daily range and total ownership cost. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-pim.wav",
+    "text": "Thank you for listening to my needs. I drive to my design studio and enjoy trying new technology. Phone connectivity and helpful driving assistance matter most to me. For my next electric car, I want you to recommend a model that fits driving assistance and in-car entertainment. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-anan.wav",
+    "text": "Thank you for listening to my needs. I drive visiting business partners to meetings. A quiet cabin and comfortable seats matter most to me. For my next electric car, I want you to recommend a model that fits comfort, premium equipment and professional image. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-mali.wav",
+    "text": "Thank you for listening to my needs. I take my parents to appointments and carry supplies for our shop. Easy access and a practical luggage area matter most to me. For my next electric car, I want you to recommend a model that fits space, daily range and total ownership cost. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-aina.wav",
+    "text": "Thank you for listening to my needs. I drive to work and visit my parents outside the city. Useful range and enough room for family luggage matter most to me. For my next electric car, I want you to recommend a model that fits space, daily range and total ownership cost. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-budi.wav",
+    "text": "Thank you for listening to my needs. I commute across the city and enjoy connected devices. Clear navigation and reliable phone integration matter most to me. For my next electric car, I want you to recommend a model that fits driving assistance and in-car entertainment. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-linh.wav",
+    "text": "Thank you for listening to my needs. I visit clients and sometimes travel between cities. Comfort on long journeys and a professional appearance matter most to me. For my next electric car, I want you to recommend a model that fits comfort, premium equipment and professional image. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "recommend-miguel.wav",
+    "text": "Thank you for listening to my needs. I take my children to school and make deliveries for my small business. Low running costs and flexible storage space matter most to me. For my next electric car, I want you to recommend a model that fits space, daily range and total ownership cost. I would appreciate a clear explanation of its practical benefits. I have not arranged a test drive."
+  },
+  {
+    "file": "negotiate-narin.wav",
+    "text": "I appreciate your explanation of a flexible cabin, practical range and overall value, but I still have a concern. The total price seems higher than another offer I received. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-pim.wav",
+    "text": "I appreciate your explanation of driving assistance, connected controls and in-car entertainment, but I still have a concern. I am unsure whether the technology package is worth the extra cost. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-anan.wav",
+    "text": "I appreciate your explanation of a quiet cabin, premium seating and a professional image, but I still have a concern. I want to know whether after-sales support justifies the price. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-mali.wav",
+    "text": "I appreciate your explanation of a flexible cabin, practical range and overall value, but I still have a concern. I am concerned about extra fees beyond the advertised price. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-aina.wav",
+    "text": "I appreciate your explanation of a flexible cabin, practical range and overall value, but I still have a concern. The monthly cost may be higher than I planned. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-budi.wav",
+    "text": "I appreciate your explanation of driving assistance, connected controls and in-car entertainment, but I still have a concern. I do not want unexpected charges for software features. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-linh.wav",
+    "text": "I appreciate your explanation of a quiet cabin, premium seating and a professional image, but I still have a concern. I want to be sure the service network meets my travel needs. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "negotiate-miguel.wav",
+    "text": "I appreciate your explanation of a flexible cabin, practical range and overall value, but I still have a concern. I need to compare the purchase price with long-term running costs. I have seen another offer. I also want to understand the battery warranty and after-sales support. I am open to a fair comparison if you can explain the value without pressuring me."
+  },
+  {
+    "file": "close-narin.wav",
+    "text": "The Family E seems to fit my needs. I commute to work and take my children out on weekends. I value a flexible cabin, practical range and overall value. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-pim.wav",
+    "text": "The Smart E seems to fit my needs. I drive to my design studio and enjoy trying new technology. I value driving assistance, connected controls and in-car entertainment. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-anan.wav",
+    "text": "The Comfort E seems to fit my needs. I drive visiting business partners to meetings. I value a quiet cabin, premium seating and a professional image. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-mali.wav",
+    "text": "The Family E seems to fit my needs. I take my parents to appointments and carry supplies for our shop. I value a flexible cabin, practical range and overall value. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-aina.wav",
+    "text": "The Family E seems to fit my needs. I drive to work and visit my parents outside the city. I value a flexible cabin, practical range and overall value. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-budi.wav",
+    "text": "The Smart E seems to fit my needs. I commute across the city and enjoy connected devices. I value driving assistance, connected controls and in-car entertainment. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-linh.wav",
+    "text": "The Comfort E seems to fit my needs. I visit clients and sometimes travel between cities. I value a quiet cabin, premium seating and a professional image. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  },
+  {
+    "file": "close-miguel.wav",
+    "text": "The Family E seems to fit my needs. I take my children to school and make deliveries for my small business. I value a flexible cabin, practical range and overall value. I would like to move forward if the final terms are clear. Before we agree, please explain the contract, payment arrangements and expected delivery time. I have not signed or paid a deposit yet. Could we confirm the next steps together?"
+  }
+]
